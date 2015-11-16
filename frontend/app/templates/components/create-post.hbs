@@ -1,0 +1,14 @@
+{{yield}}
+{{#if formShowing}}
+  <form class="" action="index.html" method="post">
+    <label for="title">Title:</label>
+    {{input value=title id='title'}}<br><br>
+
+    <label for="body">Body:</label>
+    {{textarea cols='50' rows='20' value=body id='body'}}
+
+    <button type="submit" {{action 'createPost'}}>Submit</button>
+  </form>
+{{else}}
+  <button {{action 'showForm'}}>New post?</button>
+{{/if}}
