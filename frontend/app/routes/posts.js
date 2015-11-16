@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   model() {
     return this.store.findAll('post')
   },
-
+  
   actions: {
     createPost(params) {
       this.store.createRecord('post', {
