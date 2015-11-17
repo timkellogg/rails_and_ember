@@ -1,1 +1,6 @@
-{{model.body}}
+{{#link-to 'index'}}Back{{/link-to}}
+<h2>{{model.title}}</h2>
+<p>{{model.body}}</p>
+
+<hr>
+{{update-post model=model updatePost="updatePost"}}

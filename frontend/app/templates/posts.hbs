@@ -1,7 +1,7 @@
 {{outlet}}
 
 {{#each model as |post|}}
-  {{#link-to 'post' post.id}}
+  {{#link-to 'post' post}}
     <h2>{{post.title}}</h2>
   {{/link-to}}
 {{/each}}

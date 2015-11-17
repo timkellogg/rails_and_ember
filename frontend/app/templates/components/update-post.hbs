@@ -1,0 +1,15 @@
+{{yield}}
+
+{{#if formShowing}}
+  <form>
+    <label for="title">Title:</label>
+    {{input value=title id='title' placeholder=model.title}}<br><br>
+
+    <label for="body">Body:</label>
+    {{textarea cols='50' rows='20' value=body id='body' placeholder=model.body}}
+
+    <button type="submit" {{action 'updatePost' model}}>Make edits</button>
+  </form>
+{{else}}
+  <button {{action 'showForm'}}>Edit</button>
+{{/if}}
