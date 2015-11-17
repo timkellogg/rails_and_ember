@@ -26,6 +26,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      render :json => { }, :status => 200
+    else
+      render :json => @post.errors, :error => :unprocessable_entity
+    end
+  end
+
   private
 
     def post_params

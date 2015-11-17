@@ -12,6 +12,12 @@ export default Ember.Route.extend({
         }
       });
       model.save();
+    },
+    deletePost(model) {
+      this.store.findRecord('post', model.id).then( (post) => {
+        post.destroyRecord();
+      });
+      this.transitionTo('posts');
     }
   }
 });
